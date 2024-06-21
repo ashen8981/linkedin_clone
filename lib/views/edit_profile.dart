@@ -53,7 +53,7 @@ class ProfileView extends StatelessWidget {
                                 right: -5.w,
                                 bottom: -5.h,
                                 child: CircleAvatar(
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: wCustomColor,
                                   radius: 18,
                                   child: customIcon(icon: Icons.add,
                                     color: c.blackB,
@@ -153,11 +153,11 @@ class ProfileView extends StatelessWidget {
                                   onPressed: () async {
 
                                   },
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: wCustomColor,
                                   borderRadius: 30,
                                   padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 15.w),
                                   textStyle:  const TextStyle(color: Colors.grey),
-                                  borderColor: Colors.grey,
+                                  borderColor: grey,
                                   borderWidth: 2.0,
                                 ),
                               ),
@@ -271,7 +271,7 @@ class ProfileView extends StatelessWidget {
                                             ),
                                             Container(
                                               width: 1,
-                                              color: Colors.grey,
+                                              color: grey,
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(top: 15.h),

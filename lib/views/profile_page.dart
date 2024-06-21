@@ -51,23 +51,38 @@ class _ProfilePageState extends State<ProfilePage> {
           Padding(
             padding: EdgeInsets.only(left: 14.w,right: 14.w,top: 1.h,bottom: 1.h),
             child: SizedBox(
-              height: 80.h,
+              height: 90.h, // Increased height to provide extra space for the icon
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: viewModel.users.length,
                 itemBuilder: (context, index) {
                   var user = viewModel.users[index];
                   return Padding(
-                    padding:  EdgeInsets.only(left: 9.w),
+                    padding: EdgeInsets.only(left: 9.w),
                     child: Column(
                       children: [
                         Stack(
+                          clipBehavior: Clip.none, // Ensures the icon is not clipped
                           children: [
                             CommonContainer(
                               width: 50.w,
                               height: 50.h,
                               imagePath: user.profileImageUrl,
                             ),
+                            if (index == 0)
+                              Positioned(
+                                bottom: -5.h, // Adjusted to ensure it is within bounds
+                                right: -5.w, // Adjusted to ensure it is within bounds
+                                child: CircleAvatar(
+                                  backgroundColor: commonBlue,
+                                  radius: 15,
+                                  child: customIcon(
+                                    icon: Icons.add,
+                                    size: 20.w,
+                                    color: wCustomColor,
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ],
@@ -76,7 +91,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 },
               ),
             ),
-          ),
+          )
+          ,
           Expanded(
             child: ListView.builder(
               itemCount: viewModel.posts.length,
