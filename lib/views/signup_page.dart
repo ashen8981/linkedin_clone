@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_demo/widgets/cards/signup_description_text.dart';
+import 'package:linkedin_demo/widgets/common_icon.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 import '../viewModels/user_viewmodel.dart';
+import '../widgets/app_bar/backbutton_appbar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/common_text.dart';
@@ -17,19 +19,36 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign Up')),
+      appBar: CommonAppBar(
+        leadingIcon: const customIcon(icon: Icons.arrow_back_ios_rounded, color: Colors.black),
+        onLeadingPressed: () {
+          Navigator.of(context).pop();
+        },
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.h),
           child: Column(
             children: [
               Padding(
+                padding: EdgeInsets.only(top: 25.h,bottom: 28.h ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: commonText(
+                      'Create Account',
+                      fontSizeFactor: 24.sp,
+                      fontWeight: FontWeight.w500,
+                      color: black
+                  ),
+                ),
+              ),
+              Padding(
                 padding: EdgeInsets.only(top: 15.h,bottom: 8.h ),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: commonText(
-                      'E-mail',
-                      fontSizeFactor: 16.sp,
+                      'E-mail or Phone',
+                      fontSizeFactor: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: black
                   ),
@@ -51,7 +70,7 @@ class SignupPage extends StatelessWidget {
                 alignment: Alignment.topLeft,
                   child: commonText(
                       'Password(6 characters minimum)',
-                      fontSizeFactor: 16.sp,
+                      fontSizeFactor: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: black
                   ),
