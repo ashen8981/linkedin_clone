@@ -88,26 +88,12 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 25.h,bottom: 8.h ),
               child: CurvedEdgeButton(
-                text: 'Accept and register',
+                text: 'Sign in',
                 onPressed: () async {
                   final email = emailController.text;
                   final password = passwordController.text;
                   final userViewModel = Provider.of<UserViewModel>(context, listen: false);
-
-                  await userViewModel.loginUser(email, password);
-
-                  if (userViewModel.currentUser != null) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ProfilePage(),
-                      ),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Invalid email or password')),
-                    );
-                  }
+                  await userViewModel.signInButtonPress(context, email, password);
                 },
                 backgroundColor: Colors.blue,
                 borderRadius: 30,

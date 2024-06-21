@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:linkedin_demo/views/side_navbar.dart';
 import '../../views/edit_profile.dart';
 import '../image_widget.dart';
 
@@ -29,9 +30,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           Positioned(
             top: 10.h,
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('lib/assets/profile_images/user_img_1.jpg'),
-              radius: 16, // Adjust the size as needed
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  SideScreen()),
+                );
+              },
+              child: const CircleAvatar(
+                backgroundImage: AssetImage('lib/assets/profile_images/user_img_1.jpg'),
+                radius: 16, // Adjust the size as needed
+              ),
             ),
           ),
         ],
@@ -40,10 +49,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(Icons.notifications_on_sharp, color: Colors.black),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileView()),
-            );
+
           },
         ),
       ],

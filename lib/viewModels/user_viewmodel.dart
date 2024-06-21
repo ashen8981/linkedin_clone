@@ -68,4 +68,26 @@ class UserViewModel extends ChangeNotifier {
       const ProfilePage().launch(context, pageRouteAnimation: PageRouteAnimation.Fade);
     }
   }
+
+  Future<void> signInButtonPress(BuildContext context, String email, String password) async {
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter email and password')),
+      );
+      return;
+    }
+
+    if (password.length < 6) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Password must be at least 6 characters long')),
+      );
+      return;
+    }
+
+    await loginUser(email, password);
+
+    if (currentUser != null) {
+      const ProfilePage().launch(context, pageRouteAnimation: PageRouteAnimation.Fade);
+    }
+  }
 }

@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 import '../utils/colors.dart' as c;
+import '../utils/colors.dart';
 import '../viewModels/profile_viewModel.dart';
+import '../viewModels/user_viewmodel.dart';
 import '../widgets/bottom_nav_bar/bottom_navbar.dart';
 import '../widgets/common_icon.dart';
 import '../widgets/common_text.dart';
@@ -22,7 +24,6 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final TextEditingController textController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     var viewModel = Provider.of<ProfileHomeViewModel>(context);
@@ -39,6 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   prefixIcon:Icons.search),
               suffixIcon: const Icon(
                 Icons.qr_code_scanner_outlined,
+                color:  bg1Color,
               ),
               textFieldType: TextFieldType.EMAIL,
               keyboardType: TextInputType.name,
@@ -134,19 +136,19 @@ class _ProfilePageState extends State<ProfilePage> {
                               spacing(context,vertical: 0.004.h),
                               commonText(
                                 '${post.user.time} . ${post.user.otherInfo}',
-                                  color: grey,
+                                  color: c.bCustomColor,
                                  fontSizeFactor: 12.sp,
                                   fontWeight: FontWeight.normal,
                               ),
                             ],
                           ),
-                          trailing: customIcon(icon:Icons.more_vert,size: 22.sp,),
+                          trailing: customIcon(icon:Icons.more_vert,size: 22.sp,color:c.bCustomColor),
                         ),
                         spacing(context, vertical: 0.01.h),
                         commonText(post.content,
                             fontSizeFactor: 13.sp,
                             fontWeight: FontWeight.w400,
-                            color: black
+                            color: c.bCustomColor
                         ),
                         if (post.postImageUrl.isNotEmpty)
                           Padding(
@@ -200,16 +202,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                     children: [
                                       customIcon(
                                           icon: Icons.thumb_up_alt_outlined,
-                                        color: Colors.blue,
+                                        color: iconPPColor,
                                         size: 24.sp,
                                       ),
                                       spacing(context, horizontal: 0.045.w),
                                       customIcon(icon: Icons.comment_outlined,
-                                        color: Colors.blue,
+                                        color: iconPPColor,
                                         size: 24.sp,),
                                       spacing(context, horizontal: 0.045.w),
                                       customIcon(icon: FontAwesomeIcons.share,
-                                        color: Colors.blue,
+                                        color:iconPPColor,
                                         size: 24.sp,),
                                     ],
                                   ),
@@ -217,7 +219,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   Row(
                                     children: [
                                       customIcon(icon: Icons.bookmark,
-                                        color: Colors.blue,
+                                        color: iconPPColor,
                                         size: 24.sp,),
 
                                     ],
