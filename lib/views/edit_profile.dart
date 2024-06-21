@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 import '../utils/colors.dart' as c;
+import '../utils/colors.dart';
 import '../viewModels/edit_profile_viewModel.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/cards/dashboard_widget.dart';
@@ -55,7 +56,7 @@ class ProfileView extends StatelessWidget {
                                   backgroundColor: Colors.white,
                                   radius: 18,
                                   child: customIcon(icon: Icons.add,
-                                    color: c.black,
+                                    color: c.blackB,
                                     size: 25.sp,),
                                 ),
                               ),
@@ -63,7 +64,7 @@ class ProfileView extends StatelessWidget {
                                 right: -275,
                                 bottom: -5,
                                 child: customIcon(icon: Icons.edit,
-                                  color: c.black,
+                                  color: c.blackB,
                                   size: 26.sp,),
                               ),
                             ],
@@ -99,7 +100,7 @@ class ProfileView extends StatelessWidget {
                               viewModel.userProfile!.description,
                               fontSizeFactor: 12.sp,
                               fontWeight: FontWeight.w400,
-                              color: black,
+                              color: grey,
                               textAlign: TextAlign.start
                           ),
                           spacing(context,vertical: 0.02.h),
@@ -114,7 +115,7 @@ class ProfileView extends StatelessWidget {
                               viewModel.userProfile!.location,
                               fontSizeFactor: 12.sp,
                               fontWeight: FontWeight.w400,
-                              color: black,
+                              color: grey,
                               textAlign: TextAlign.start
                           ),
                           spacing(context,vertical: 0.02.h),
@@ -122,7 +123,7 @@ class ProfileView extends StatelessWidget {
                               '${viewModel.userProfile!.followers} followers • ${viewModel.userProfile!.connections}+ connections',
                               fontSizeFactor: 17.sp,
                               fontWeight: FontWeight.w400,
-                              color: black,
+                              color: commonBlue,
                               textAlign: TextAlign.start
                           ),
                           spacing(context,vertical: 0.02.h),
@@ -137,7 +138,7 @@ class ProfileView extends StatelessWidget {
                                   onPressed: () async {
 
                                   },
-                                  backgroundColor: Colors.blue,
+                                  backgroundColor: commonBlue,
                                   borderRadius: 30,
                                   padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 25.w),
 
@@ -186,7 +187,7 @@ class ProfileView extends StatelessWidget {
                           // Dashboard
 
                           Container(
-                            color: Colors.yellow,
+                            color: blueG,
                             child: Stack(
                               children: [
                                 Column(
@@ -220,7 +221,7 @@ class ProfileView extends StatelessWidget {
                                           Row(
                                            children: [
                                              customIcon(icon: Icons.star_border,
-                                               color: c.black,
+                                               color: c.blackB,
                                                size: 26.sp,),
                                              Padding(
                                                padding:  EdgeInsets.only(left: 4.h,right: 2.h),
@@ -244,7 +245,7 @@ class ProfileView extends StatelessWidget {
                                         height: 80.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(20),
-                                          color: Colors.red,
+                                          color: wCustomColor,
                                         ),
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -258,8 +259,8 @@ class ProfileView extends StatelessWidget {
                                               ),
                                             ),
                                             Container(
-                                              width: 1, // Width of the divider line
-                                              color: Colors.white, // Color of the divider line
+                                              width: 1,
+                                              color: Colors.grey,
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(top: 15.h),
@@ -269,8 +270,8 @@ class ProfileView extends StatelessWidget {
                                               ),
                                             ),
                                             Container(
-                                              width: 1, // Width of the divider line
-                                              color: Colors.white, // Color of the divider line
+                                              width: 1,
+                                              color: Colors.grey,
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(top: 15.h),
@@ -290,7 +291,7 @@ class ProfileView extends StatelessWidget {
                                         height: 80.h,
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(20),
-                                            color:Colors.red
+                                            color:wCustomColor
                                         ),
                                         child: Padding(
                                           padding: EdgeInsets.only(top: 10.h,left: 5.w,right: 5.w ),
@@ -299,7 +300,7 @@ class ProfileView extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               customIcon(icon: Icons.wifi_tethering_sharp,
-                                                color: c.black,
+                                                color: c.blackB,
                                                 size: 26.sp,),
                                               Padding(
                                                 padding:  EdgeInsets.only(left: 6.h,right: 2.h),
@@ -322,8 +323,8 @@ class ProfileView extends StatelessWidget {
                                   left: 0,
                                   right: 0,
                                   child: Container(
-                                    height: 40.h, // Adjust the height of the grey rectangle
-                                    color: Colors.grey[300], // Grey color for the rectangle
+                                    height: 40.h,
+                                    color: greyL,
                                   ),
                                 ),
                               ],

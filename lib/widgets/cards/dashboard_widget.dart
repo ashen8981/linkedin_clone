@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nb_utils/nb_utils.dart';
-
+import '../../utils/colors.dart';
 import '../common_text.dart';
 
 //edit profile page 3 divided card
@@ -20,7 +20,7 @@ class DashboardItem extends StatelessWidget {
           count.toString(),
           fontSizeFactor: 21.sp,
           fontWeight: FontWeight.w800,
-          color: blueColor,
+          color: commonBlue,
           textAlign: TextAlign.start,
         ),
         commonText(
