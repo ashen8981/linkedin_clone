@@ -1,3 +1,4 @@
+import '../models/edit_user_dashboard.dart';
 import '../models/edit_user_profile.dart';
 
 class EditProfileService {

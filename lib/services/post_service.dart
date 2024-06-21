@@ -1,3 +1,4 @@
+import '../models/post_model.dart';
 import '../models/profile_model.dart';
 
 
@@ -19,7 +20,7 @@ class PostService {
         postImageUrl: "lib/assets/post_images/post_img_2.webp",
         likes: 45,
         comments: 34,
-        likesT: "Liked by Tony and 23 others",
+        likesT: "Liked by Tony and 93 others",
         commentsT: "comments",
       ),
       PostModel(
@@ -29,7 +30,7 @@ class PostService {
         likes: 98,
         comments: 77,
         commentsT: "comments",
-        likesT: "Liked by Tony and 23 others",
+        likesT: "Liked by Tony and 20 others",
       ),
       PostModel(
         user: users[3],
@@ -47,7 +48,7 @@ class PostService {
         likes: 98,
         comments: 77,
         commentsT: "comments",
-        likesT: "Liked by Tony and 23 others",
+        likesT: "Liked by Tony and 29 others",
       ),
     ];
   }
