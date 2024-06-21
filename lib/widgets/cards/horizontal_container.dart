@@ -21,7 +21,7 @@ class HorizontalScrollableWidget extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.3,
                 height: 120,
-                color: Colors.grey,
+                color: greyL,
                 child: Padding(
                   padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 1.h, bottom: 1.h),
                   child: Column(
@@ -35,12 +35,12 @@ class HorizontalScrollableWidget extends StatelessWidget {
                             'Open to work',
                             fontSizeFactor: 15.sp,
                             fontWeight: FontWeight.w600,
-                            color: black,
+                            color: blackB,
                           ),
                           const Spacer(),
                           customIcon(
                             icon: Icons.edit,
-                            color: black,
+                            color: blackB,
                             size: 24.sp,
                           ),
                         ],
@@ -49,13 +49,13 @@ class HorizontalScrollableWidget extends StatelessWidget {
                         'iOS Developer roles',
                         fontSizeFactor: 13.sp,
                         fontWeight: FontWeight.w500,
-                        color: black,
+                        color: blackB,
                       ),
                       commonText(
                         'See all details',
                         fontSizeFactor: 11.sp,
                         fontWeight: FontWeight.w500,
-                        color: black,
+                        color: commonBlue,
                       ),
                     ],
                   ),
